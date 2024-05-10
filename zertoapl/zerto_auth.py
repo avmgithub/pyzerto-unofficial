@@ -13,7 +13,8 @@ def login(zvm_ip, zvm_user, zvm_password, verbose=False):
     The login function accepts three str-type inputs (IP addresss of ZVM/ZCA, username of ZVM/ZCA, and password of ZVM/
     ZCA) and returns a dict-type containing the valid headers for future API requests.
     """
-    sessionUrl = 'https://' + zvm_ip + ':9669/v1/session/add'
+    # sessionUrl = 'https://' + zvm_ip + ':9669/v1/session/add'
+    sessionUrl = 'https://' + zvm_ip + ':' + zvm_port + '/v1/session/add'
     if verbose:
         print("Getting API token for " + zvm_ip + "...")
     auth_info = "{\r\n\t\"AuthenticationMethod\":1\r\n}"
