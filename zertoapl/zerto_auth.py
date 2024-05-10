@@ -48,8 +48,8 @@ def login(zvm_ip, zvm_port, zvm_user, zvm_password, verbose=False):
     if verbose:
         print("Getting API token for " + zvm_ip + "...")
     auth_info = {
-        "grant_type": "password",
-        "client_id": "zerto-client"
+        'grant_type': 'password,
+        'client_id': 'zerto-client'
     }
 
     headers = {
