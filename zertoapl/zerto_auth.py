@@ -6,7 +6,7 @@ by the target Zerto Virtual Manager or Zerto Cloud Appliance.
 import requests
 from requests.auth import HTTPBasicAuth
 
-def login(zvm_ip, zvm_user, zvm_password, verbose=False):
+def login(zvm_ip, zvm_port, zvm_user, zvm_password, verbose=False):
     """The login function returns a valid header, including an API token, that can then be passed to newly instansiated
     classes from other modules.
 
