@@ -47,7 +47,7 @@ def login(zvm_ip, zvm_port, zvm_user, zvm_password, verbose=False):
     sessionUrl = 'https://' + zvm_ip + ':' + zvm_port + '/auth/realms/zerto/protocol/openid-connect/token'
     if verbose:
         print("Getting API token for " + zvm_ip + "...")
-    auth_info = {'grant_type': 'password','client_id': 'zerto-client'}
+    auth_info = {'grant_type': 'password','client_id': 'zerto-client', 'username': zvm_user, 'password':  zvm_password}
 
     headers = {
         'Accept': 'application/json',
