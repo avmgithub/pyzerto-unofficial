@@ -54,14 +54,20 @@ def login(zvm_ip, zvm_port, zvm_user, zvm_password, verbose=False):
         'Content-Type': 'application/x-www-form-urlencoded'
         }
 
+    headers1 = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        }
+
+
     response = requests.post(sessionUrl, headers=headers, data=auth_info, verify=False, timeout=10 )
     if response.ok:
         auth_token = response.headers['access_token']
-        headers['access_token'] = auth_token
+        headers1['Authorization'] = 'Bearer ' + auth_token
         if verbose:
             print("Api Token: " + auth_token)
             print(headers)
-        return headers
+        return headers1
 
     else:
         raise Exception(f"HTTP: {response.status_code} - {response.reason}, Message: {response.text}")
