@@ -200,7 +200,8 @@ class zvm:
                 }
         """
 
-        self.zvmurl = 'https://' + zvmip + ':9669/v1'
+        #self.zvmurl = 'https://' + zvmip + ':9669/v1'
+        self.zvmurl = 'https://' + zvmip + '/v1'
         self.headerwithkey = headerwithkey
         
 
