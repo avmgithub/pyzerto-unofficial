@@ -65,7 +65,7 @@ def login(zvm_ip, zvm_user, zvm_password, zvm_port=9669, verbose=False):
         response = requests.post(sessionUrl, headers=headers, data=auth_info, verify=False, timeout=10, auth=HTTPBasicAuth(zvm_user, zvm_password))
     
     if response.ok:
-        if zvm_port == 443:
+        if zvm_port == '443':
             auth_token = response.json()['access_token']
             headers['Authorization'] = 'Bearer ' + auth_token
             if verbose:
