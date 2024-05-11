@@ -44,11 +44,11 @@ def login(zvm_ip, zvm_user, zvm_password, zvm_port=9669, verbose=False):
     ZCA) and returns a dict-type containing the valid headers for future API requests.
     """
     # sessionUrl = 'https://' + zvm_ip + ':9669/v1/session/add'
-    sessionUrl = 'https://' + zvm_ip + ':' + zvm_port + '/auth/realms/zerto/protocol/openid-connect/token'
     if verbose:
         print("Getting API token for " + zvm_ip + "...")
 
     if zvm_port == 443:
+        sessionUrl = 'https://' + zvm_ip + ':' + zvm_port + '/auth/realms/zerto/protocol/openid-connect/token'
         auth_info = {'grant_type': 'password','client_id': 'zerto-client', 'username': zvm_user, 'password':  zvm_password}
         headers = {
             'Accept': 'application/json',
@@ -56,6 +56,7 @@ def login(zvm_ip, zvm_user, zvm_password, zvm_port=9669, verbose=False):
             }
         response = requests.post(sessionUrl, headers=headers, data=auth_info, verify=False, timeout=10 )
     else: # default port 9669
+        sessionUrl = 'https://' + zvm_ip + ':9669/v1/session/add'
         auth_info = "{\r\n\t\"AuthenticationMethod\":1\r\n}"
         headers = {
             'Accept': 'application/json',
