@@ -71,7 +71,7 @@ def login(zvm_ip, zvm_user, zvm_password, zvm_port=9669, verbose=False):
             if verbose:
                 print("Api Token: " + auth_token)
                 print(headers)
-            return headers1
+            return headers
         else:
             auth_token = response.headers['x-zerto-session']
             headers['x-zerto-session'] = auth_token
