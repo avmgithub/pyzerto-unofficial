@@ -108,7 +108,7 @@ class vpgs():
     """
     endPoint = '/vpgs'
 
-    def __init__(self, zvmip, headerwithkey, vpgid=None):
+    def __init__(self, zvmip, headerwithkey, vpgid=None, zvm_port='9669'):
         """
         Parameters
         ----------
@@ -124,8 +124,11 @@ class vpgs():
         vpgid: str
             unique identifier for individual VPG
         """
+        if zvm_port == '443':
+            self.zvmurl = 'https://' + zvmip + '/v1'
+        else
+            self.zvmurl = 'https://' + zvmip + ':9669/v1'
 
-        self.zvmip = 'https://' + zvmip + ':9669/v1'
         self.headerwithkey = headerwithkey
         self.vpgid = vpgid
 
@@ -734,7 +737,7 @@ class vpgSettings():
 
     endPoint = '/vpgSettings'
 
-    def __init__(self, zvmip, headerwithkey, vpgid=None, vmid=None, nicid=None, volumeid=None):
+    def __init__(self, zvmip, headerwithkey, vpgid=None, vmid=None, nicid=None, volumeid=None, zvm_port='9669'):
         """
         Parameters
         ----------
@@ -761,7 +764,11 @@ class vpgSettings():
         volumeid : str, optional
             ID of the volume in question
         """
-        self.zvmip = 'https://' + zvmip + ':9669/v1'
+        if zvm_port == '443':
+            self.zvmurl = 'https://' + zvmip + '/v1'
+        else
+            self.zvmurl = 'https://' + zvmip + ':9669/v1'
+
         self.headerwithkey = headerwithkey
         self.vpgid = vpgid
         self.vmid = vmid

@@ -185,7 +185,7 @@ class zvm:
         Returns information about available volumes visible to the ZVM/ZCA.
     """
 
-    def __init__(self, zvmip, headerwithkey):
+    def __init__(self, zvmip, headerwithkey, zvm_port='9669'):
         """
         Parameters
         ----------
@@ -200,9 +200,14 @@ class zvm:
                 }
         """
 
-        #self.zvmurl = 'https://' + zvmip + ':9669/v1'
-        self.zvmurl = 'https://' + zvmip + '/v1'
+        if zvm_port == '443':
+            self.zvmurl = 'https://' + zvmip + '/v1'
+        else
+            self.zvmurl = 'https://' + zvmip + ':9669/v1'
+
         self.headerwithkey = headerwithkey
+
+
         
 
     def infoAllAlerts(self):
