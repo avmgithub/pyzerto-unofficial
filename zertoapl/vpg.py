@@ -769,6 +769,7 @@ class vpgSettings():
         else: # default port 9669
             self.zvmurl = 'https://' + zvmip + ':9669/v1'
 
+        self.zvmip = zvmip
         self.headerwithkey = headerwithkey
         self.vpgid = vpgid
         self.vmid = vmid
