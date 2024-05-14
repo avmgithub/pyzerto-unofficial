@@ -108,7 +108,7 @@ class vpgs():
     """
     endPoint = '/vpgs'
 
-    def __init__(self, zvmip, headerwithkey, vpgid=None, zvm_port='9669'):
+    def __init__(self, zvmip, headerwithkey, vpgid=None, zvm_port=443):
         """
         Parameters
         ----------
@@ -126,7 +126,7 @@ class vpgs():
         """
         if zvm_port == '443':
             self.zvmurl = 'https://' + zvmip + '/v1'
-        else
+        else: # default port 9669
             self.zvmurl = 'https://' + zvmip + ':9669/v1'
 
         self.headerwithkey = headerwithkey
@@ -737,7 +737,7 @@ class vpgSettings():
 
     endPoint = '/vpgSettings'
 
-    def __init__(self, zvmip, headerwithkey, vpgid=None, vmid=None, nicid=None, volumeid=None, zvm_port='9669'):
+    def __init__(self, zvmip, headerwithkey, vpgid=None, vmid=None, nicid=None, volumeid=None, zvm_port=443):
         """
         Parameters
         ----------
@@ -766,7 +766,7 @@ class vpgSettings():
         """
         if zvm_port == '443':
             self.zvmurl = 'https://' + zvmip + '/v1'
-        else
+        else: # default port 9669
             self.zvmurl = 'https://' + zvmip + ':9669/v1'
 
         self.headerwithkey = headerwithkey
