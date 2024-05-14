@@ -185,7 +185,7 @@ class zvm:
         Returns information about available volumes visible to the ZVM/ZCA.
     """
 
-    def __init__(self, zvmip, headerwithkey, zvm_port=443):
+    def __init__(self, zvmip, headerwithkey, zvm_port='443'):
         """
         Parameters
         ----------

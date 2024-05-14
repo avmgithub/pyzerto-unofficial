@@ -108,7 +108,7 @@ class vpgs():
     """
     endPoint = '/vpgs'
 
-    def __init__(self, zvmip, headerwithkey, vpgid=None, zvm_port=443):
+    def __init__(self, zvmip, headerwithkey, vpgid=None, zvm_port='443'):
         """
         Parameters
         ----------
@@ -737,7 +737,7 @@ class vpgSettings():
 
     endPoint = '/vpgSettings'
 
-    def __init__(self, zvmip, headerwithkey, vpgid=None, vmid=None, nicid=None, volumeid=None, zvm_port=443):
+    def __init__(self, zvmip, headerwithkey, vpgid=None, vmid=None, nicid=None, volumeid=None, zvm_port='443'):
         """
         Parameters
         ----------
