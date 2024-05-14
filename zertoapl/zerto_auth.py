@@ -36,7 +36,7 @@ from requests.auth import HTTPBasicAuth
 #     else:
 #         raise Exception(f"HTTP: {response.status_code} - {response.reason}, Message: {response.text}")
 
-def login(zvm_ip, zvm_user, zvm_password, zvm_port=443, verbose=False):
+def login(zvm_ip, zvm_user, zvm_password, zvm_port='443', verbose=False):
     """The login function returns a valid header, including an API token, that can then be passed to newly instansiated
     classes from other modules.
 
