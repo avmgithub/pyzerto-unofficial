@@ -125,11 +125,10 @@ class vpgs():
             unique identifier for individual VPG
         """
         if zvm_port == '443':
-            self.zvmurl = 'https://' + zvmip + '/v1'
+            self.zvmip = 'https://' + zvmip + '/v1'
         else: # default port 9669
-            self.zvmurl = 'https://' + zvmip + ':9669/v1'
+            self.zvmip = 'https://' + zvmip + ':9669/v1'
 
-        self.zvmip = zvmip
         self.headerwithkey = headerwithkey
         self.vpgid = vpgid
 
