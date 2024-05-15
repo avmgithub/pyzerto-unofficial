@@ -67,6 +67,7 @@ def login(zvm_ip, zvm_user, zvm_password, zvm_port='443', verbose=False):
     if response.ok:
         if zvm_port == '443':
             auth_token = response.json()['access_token']
+            headers['Content-Type'] = 'application/json'
             headers['Authorization'] = 'Bearer ' + auth_token
             if verbose:
                 print("Api Token: " + auth_token)
