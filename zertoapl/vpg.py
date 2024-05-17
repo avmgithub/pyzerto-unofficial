@@ -1097,7 +1097,7 @@ class vpgSettings():
         """
 
         return requests.post(self.zvmip + self.endPoint + '/' + vpgid + '/commit', headers=self.headerwithkey, verify=False)
-
+        
     def addVmsToSettingObject(self, vpgid, body):
         """
         Adds VMs to an open VPG settings object.
@@ -1115,8 +1115,8 @@ class vpgSettings():
         type requests.models.Response object
         """
 
-        return requests.post(self.zvmip + self.endPoint + '/' + vpgid + '/vms', body=body, headers=self.headerwithkey, verify=False)
-
+        #return requests.post(self.zvmip + self.endPoint + '/' + vpgid + '/vms', body=body, headers=self.headerwithkey, verify=False)
+        return requests.post(self.zvmip + self.endPoint + '/' + vpgid + '/vms', data=body, headers=self.headerwithkey, verify=False)
     def editVpgSettingsObject(self, vpgid, argbody):
         """
         Edits an open VPG settings object with the contents of argbody.
